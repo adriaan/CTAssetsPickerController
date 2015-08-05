@@ -28,12 +28,13 @@
 #import "CTAssetCheckmark.h"
 #import "NSBundle+CTAssetsPickerController.h"
 #import "UIImage+CTAssetsPickerController.h"
-
+#import "IDNumberedSelectionView.h"
 
 @interface CTAssetCheckmark ()
 
 @property (nonatomic, strong) UIImageView *shadowImageView;
 @property (nonatomic, strong) UIImageView *checkmarkImageView;
+@property (nonatomic, strong) IDNumberedSelectionView *countView;
 
 @property (nonatomic, assign) BOOL didSetupConstraints;
 
@@ -56,6 +57,11 @@
     return self;
 }
 
+- (void)setNumber:(NSInteger)number
+{
+    [_countView updateWithNumber:number];
+}
+
 #pragma mark - Setup
 
 - (void)setupViews
@@ -66,12 +72,18 @@
     self.shadowImageView = shadowImageView;
     [self addSubview:self.shadowImageView];
     
-    UIImage *checkmarkImage = [UIImage ctassetsPickerImageNamed:@"Checkmark"];
-    checkmarkImage = [checkmarkImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIImageView *checkmarkImageView = [[UIImageView alloc] initWithImage:checkmarkImage];
-    checkmarkImageView.userInteractionEnabled = NO;
-    self.checkmarkImageView = checkmarkImageView;
-    [self addSubview:self.checkmarkImageView];
+//    UIImage *checkmarkImage = [UIImage ctassetsPickerImageNamed:@"Checkmark"];
+//    checkmarkImage = [checkmarkImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    UIImageView *checkmarkImageView = [[UIImageView alloc] initWithImage:checkmarkImage];
+//    checkmarkImageView.userInteractionEnabled = NO;
+//    self.checkmarkImageView = checkmarkImageView;
+//    [self addSubview:self.checkmarkImageView];
+    
+    self.countView = [IDNumberedSelectionView new];
+    self.countView.userInteractionEnabled = NO;
+    [self addSubview:self.countView];
+    
+    
 }
 
 - (void)updateConstraints
@@ -85,7 +97,8 @@
         }];
         
         [self.shadowImageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-        [self.checkmarkImageView autoCenterInSuperview];
+//        [self.checkmarkImageView autoCenterInSuperview];
+        [self.countView autoCenterInSuperview];
         
         self.didSetupConstraints = YES;
     }

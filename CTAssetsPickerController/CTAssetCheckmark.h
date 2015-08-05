@@ -28,4 +28,6 @@
 
 @interface CTAssetCheckmark : UIView
 
+- (void)setNumber:(NSInteger)number;
+
 @end

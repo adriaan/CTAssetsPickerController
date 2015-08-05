@@ -158,6 +158,11 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     return (self.fetchResult.count > 0) ? self.fetchResult[indexPath.item] : nil;
 }
 
+- (NSIndexPath *)indexPathForAsset:(PHAsset *)asset
+{
+    return (self.fetchResult.count > 0) ? [NSIndexPath indexPathForItem:[self.fetchResult indexOfObject:asset] inSection:0] : nil;
+}
+
 
 #pragma mark - Setup
 
@@ -173,6 +178,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
                                      style:UIBarButtonItemStyleDone
                                     target:self.picker
                                     action:@selector(finishPickingAssets:)];
+    
 }
 
 - (void)setupAssets
@@ -599,7 +605,9 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     // Have to call selectItemAtIndexPath too. ( ref: http://stackoverflow.com/a/17812116/1648333 )
     if ([self.picker.selectedAssets containsObject:asset])
     {
+        NSInteger index = [self.picker.selectedAssets indexOfObject:asset];
         cell.selected = YES;
+        cell.selectionCount = index + 1;
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     }
     
@@ -653,6 +661,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     PHAsset *asset = [self assetAtIndexPath:indexPath];
     
     CTAssetsGridViewCell *cell = (CTAssetsGridViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.selectionCount = [self.picker.selectedAssets count] + 1;
     
     if (!cell.isEnabled)
         return NO;
@@ -686,7 +695,21 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
 {
     PHAsset *asset = [self assetAtIndexPath:indexPath];
     
+    //update counts on currently selected assets
+    NSMutableArray *indexPaths = [NSMutableArray new];
+    BOOL shouldUpdate = NO;
+    for(PHAsset *selectedAsset in self.picker.selectedAssets){
+        if(asset == selectedAsset){
+            shouldUpdate = YES;
+        } else if(shouldUpdate){
+            NSIndexPath *indexPath = [self indexPathForAsset:selectedAsset];
+            [indexPaths addObject:indexPath];
+        }
+    }
+    
     [self.picker deselectAsset:asset];
+    
+    [self.collectionView reloadItemsAtIndexPaths:indexPaths];
     
     if ([self.picker.delegate respondsToSelector:@selector(assetsPickerController:didDeselectAsset:)])
         [self.picker.delegate assetsPickerController:self.picker didDeselectAsset:asset];

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		363F8D0A685BF86C60D06D49 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B2FBB7FD634FB543BB7BB6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		633022BC1B720915007B39B9 /* IDFieldAppsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 633022BB1B720915007B39B9 /* IDFieldAppsExample.m */; };
 		AD0786D91B428313003C8863 /* CTBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786D81B428313003C8863 /* CTBasicViewController.m */; };
 		AD0786DF1B42864F003C8863 /* CTSelectedAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786DE1B42864F003C8863 /* CTSelectedAssetsViewController.m */; };
 		AD0786E21B428A73003C8863 /* CTDefaultAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786E11B428A73003C8863 /* CTDefaultAlbumViewController.m */; };
@@ -32,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		408BD0916F5C7C71C93D0E93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		633022BA1B720915007B39B9 /* IDFieldAppsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFieldAppsExample.h; sourceTree = "<group>"; };
+		633022BB1B720915007B39B9 /* IDFieldAppsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFieldAppsExample.m; sourceTree = "<group>"; };
+		633022BD1B7210BF007B39B9 /* IDNumberedSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDNumberedSelectionView.h; sourceTree = "<group>"; };
+		633022BE1B7210BF007B39B9 /* IDNumberedSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDNumberedSelectionView.m; sourceTree = "<group>"; };
 		AD0786A21B423AF2003C8863 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AD0786A41B423AFC003C8863 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		AD0786A61B423AFC003C8863 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -214,6 +219,8 @@
 				ADFE238A1B46868100E44353 /* CTApperanceViewController.m */,
 				ADFC004A1B54FF740024CBB9 /* CTLayoutViewController.h */,
 				ADFC004B1B54FF740024CBB9 /* CTLayoutViewController.m */,
+				633022BA1B720915007B39B9 /* IDFieldAppsExample.h */,
+				633022BB1B720915007B39B9 /* IDFieldAppsExample.m */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -303,6 +310,8 @@
 				ADD9660C1AAD5780002A26A2 /* CTAssetsPickerDefines.h */,
 				ADD965F31AAD5780002A26A2 /* Categories */,
 				ADD966171AAD5780002A26A2 /* Resources */,
+				633022BD1B7210BF007B39B9 /* IDNumberedSelectionView.h */,
+				633022BE1B7210BF007B39B9 /* IDNumberedSelectionView.m */,
 			);
 			path = CTAssetsPickerController;
 			sourceTree = SOURCE_ROOT;
@@ -383,7 +392,7 @@
 				TargetAttributes = {
 					ADD965C51AAD4C49002A26A2 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = VE5FET45CD;
+						DevelopmentTeam = 83GN3MK5U3;
 					};
 				};
 			};
@@ -492,6 +501,7 @@
 				ADD965D21AAD4C49002A26A2 /* CTMasterViewController.m in Sources */,
 				ADA073071B4515AF009FB7C7 /* CTPhotosViewController.m in Sources */,
 				AD6CDA4A1AC55BEE008C6AC2 /* UICollectionView+CTAssetsPickerController.m in Sources */,
+				633022BC1B720915007B39B9 /* IDFieldAppsExample.m in Sources */,
 				ADD965CC1AAD4C49002A26A2 /* main.m in Sources */,
 				ADFE23881B46602400E44353 /* CTProgrammaticViewController.m in Sources */,
 				ADA0730A1B451E11009FB7C7 /* CTSloMoViewController.m in Sources */,
@@ -654,6 +664,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CTAssetsPickerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -668,6 +679,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CTAssetsPickerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -33,6 +33,7 @@
 @interface CTAssetsGridViewCell : UICollectionViewCell
 
 @property (nonatomic, assign, getter = isEnabled) BOOL enabled;
+@property (nonatomic, assign) NSInteger selectionCount;
 
 - (void)bind:(PHAsset *)asset;
 

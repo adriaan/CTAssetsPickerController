@@ -44,6 +44,7 @@
 @property (nonatomic, strong) UIView *highlightedView;
 @property (nonatomic, strong) UIView *selectedView;
 
+
 @property (nonatomic, assign) BOOL didSetupConstraints;
 
 @end
@@ -67,6 +68,11 @@
     }
     
     return self;
+}
+
+- (void)setSelectionCount:(NSInteger)selectionCount
+{
+    [_checkmark setNumber:selectionCount];
 }
 
 #pragma mark - Setup

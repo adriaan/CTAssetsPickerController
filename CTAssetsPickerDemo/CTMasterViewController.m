@@ -24,7 +24,7 @@
  
  */
 
-#import <CTAssetsPickerController/CTAssetsPickerController.h>
+#import "CTAssetsPickerController.h"
 #import "CTMasterViewController.h"
 
 #import "CTBasicViewController.h"
@@ -63,7 +63,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -92,7 +92,9 @@
         case 5:
             return 1;
             break;
-            
+        case 6:
+            return 1;
+            break;
         default:
             return 0;
             break;
@@ -124,6 +126,9 @@
             
         case 5:
             return @"CollectionView Layout (Experimental)";
+            break;
+        case 6:
+            return @"Field Apps";
             break;
             
         default:
@@ -203,6 +208,12 @@
             title = @"Grid view Customisation";
     }
     
+    if(section == 6){
+        if (row == 0){
+            title = @"Field Apps Version";
+        }
+    }
+    
     
     cell.textLabel.text = title;
     
@@ -273,6 +284,27 @@
     {
         if (row == 0)
             vc = (UIViewController *)[CTLayoutViewController new];
+    }
+    
+    
+    if(section == 6){
+        if(row == 0){
+            // init picker
+            CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
+            
+            // set delegate
+            //picker.delegate = self;
+            
+            // set default album (Camera Roll)
+            picker.defaultAssetCollection = PHAssetCollectionSubtypeSmartAlbumVideos;
+            
+            // to present picker as a form sheet in iPad
+            picker.modalPresentationStyle = UIModalPresentationFormSheet;
+            
+            // present picker
+            [self presentViewController:picker animated:YES completion:nil];
+            return;
+        }
     }
     
     if (vc)
