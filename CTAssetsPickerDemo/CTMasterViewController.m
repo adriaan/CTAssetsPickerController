@@ -45,9 +45,14 @@
 #import "CTApperanceViewController.h"
 
 #import "CTLayoutViewController.h"
+#import "IDFieldAppsExample.h"
 
 
+@interface CTMasterViewController () <CTAssetsPickerControllerDelegate>
 
+@property (nonatomic, strong) IDFieldAppsExample *fieldAppsExample;
+
+@end
 
 @implementation CTMasterViewController
 
@@ -290,19 +295,10 @@
     if(section == 6){
         if(row == 0){
             // init picker
-            CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
-            
-            // set delegate
-            //picker.delegate = self;
-            
-            // set default album (Camera Roll)
-            picker.defaultAssetCollection = PHAssetCollectionSubtypeSmartAlbumVideos;
-            
-            // to present picker as a form sheet in iPad
-            picker.modalPresentationStyle = UIModalPresentationFormSheet;
+            self.fieldAppsExample = [IDFieldAppsExample new];
             
             // present picker
-            [self presentViewController:picker animated:YES completion:nil];
+            [self presentViewController:_fieldAppsExample.picker animated:YES completion:nil];
             return;
         }
     }

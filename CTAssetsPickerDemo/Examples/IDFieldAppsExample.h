@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CTAssetsPickerController.h"
 
 @interface IDFieldAppsExample : NSObject
+
+@property (nonatomic, strong) CTAssetsPickerController *picker;
 
 @end

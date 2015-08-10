@@ -179,6 +179,12 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
                                     target:self.picker
                                     action:@selector(finishPickingAssets:)];
     
+    //NOTE: added the below to disable navigation back through the stack and have a cancel button instead.
+    [self.navigationItem setHidesBackButton:YES animated:NO];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
+                                                                             style:UIBarButtonItemStyleDone
+                                                                            target:self.picker
+                                                                            action:@selector(dismiss:)];
 }
 
 - (void)setupAssets
