@@ -70,6 +70,7 @@
     UIImageView *shadowImageView = [[UIImageView alloc] initWithImage:shadowImage];
     shadowImageView.userInteractionEnabled = NO;
     self.shadowImageView = shadowImageView;
+    self.shadowImageView.alpha = 0;
     [self addSubview:self.shadowImageView];
     
 //    UIImage *checkmarkImage = [UIImage ctassetsPickerImageNamed:@"Checkmark"];
@@ -82,8 +83,6 @@
     self.countView = [IDNumberedSelectionView new];
     self.countView.userInteractionEnabled = NO;
     [self addSubview:self.countView];
-    
-    
 }
 
 - (void)updateConstraints

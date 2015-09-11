@@ -152,16 +152,21 @@
 - (void)setupButtons
 {
     self.cancelButton =
-    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
-                                     style:UIBarButtonItemStylePlain
-                                    target:self.picker
-                                    action:@selector(dismiss:)];
+//    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
+//                                     style:UIBarButtonItemStylePlain
+//                                    target:self.picker
+//                                    action:@selector(dismiss:)];
+    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBarCancel"] style:UIBarButtonItemStylePlain target:self.picker action:@selector(dismiss:)];
 
+    
+    UIImage *buttonImage = [[UIImage imageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.doneButton =
-    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
-                                     style:UIBarButtonItemStyleDone
-                                    target:self.picker
-                                    action:@selector(finishPickingAssets:)];
+//    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
+//                                     style:UIBarButtonItemStyleDone
+//                                    target:self.picker
+//                                    action:@selector(finishPickingAssets:)];
+    
+    [[UIBarButtonItem alloc] initWithImage:buttonImage style:UIBarButtonItemStylePlain target:self.picker action:@selector(finishPickingAssets:)];
 }
 
 - (void)localize

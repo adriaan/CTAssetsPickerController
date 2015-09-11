@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		363F8D0A685BF86C60D06D49 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B2FBB7FD634FB543BB7BB6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		633022BC1B720915007B39B9 /* IDFieldAppsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 633022BB1B720915007B39B9 /* IDFieldAppsExample.m */; };
+		63F0A5C01BA35371008D4E41 /* CTAssetsPicker.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD9661A1AAD5780002A26A2 /* CTAssetsPicker.xcassets */; };
+		63F0A5C41BA3592A008D4E41 /* Swiss721BT-BoldCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63F0A5C31BA3592A008D4E41 /* Swiss721BT-BoldCondensed.otf */; };
 		AD0786D91B428313003C8863 /* CTBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786D81B428313003C8863 /* CTBasicViewController.m */; };
 		AD0786DF1B42864F003C8863 /* CTSelectedAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786DE1B42864F003C8863 /* CTSelectedAssetsViewController.m */; };
 		AD0786E21B428A73003C8863 /* CTDefaultAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0786E11B428A73003C8863 /* CTDefaultAlbumViewController.m */; };
@@ -37,6 +39,7 @@
 		633022BB1B720915007B39B9 /* IDFieldAppsExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFieldAppsExample.m; sourceTree = "<group>"; };
 		633022BD1B7210BF007B39B9 /* IDNumberedSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDNumberedSelectionView.h; sourceTree = "<group>"; };
 		633022BE1B7210BF007B39B9 /* IDNumberedSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDNumberedSelectionView.m; sourceTree = "<group>"; };
+		63F0A5C31BA3592A008D4E41 /* Swiss721BT-BoldCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss721BT-BoldCondensed.otf"; sourceTree = "<group>"; };
 		AD0786A21B423AF2003C8863 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AD0786A41B423AFC003C8863 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		AD0786A61B423AFC003C8863 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -343,6 +346,7 @@
 		ADD966171AAD5780002A26A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63F0A5C31BA3592A008D4E41 /* Swiss721BT-BoldCondensed.otf */,
 				ADD966181AAD5780002A26A2 /* CTAssetsPicker.strings */,
 				ADD9661A1AAD5780002A26A2 /* CTAssetsPicker.xcassets */,
 			);
@@ -438,6 +442,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD965DD1AAD4C4A002A26A2 /* LaunchScreen.xib in Resources */,
+				63F0A5C41BA3592A008D4E41 /* Swiss721BT-BoldCondensed.otf in Resources */,
+				63F0A5C01BA35371008D4E41 /* CTAssetsPicker.xcassets in Resources */,
 				ADD965DA1AAD4C4A002A26A2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

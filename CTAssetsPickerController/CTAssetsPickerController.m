@@ -498,8 +498,8 @@ NSString * const CTAssetsPickerDidDeselectAssetNotification = @"CTAssetsPickerDi
     
     else if (videoSelected)
         format = (self.selectedAssets.count > 1) ?
-        CTAssetsPickerLocalizedString(@"%@ Videos Selected", nil) :
-        CTAssetsPickerLocalizedString(@"%@ Video Selected", nil);
+        CTAssetsPickerLocalizedString(@"%@ Clips", nil) :
+        CTAssetsPickerLocalizedString(@"%@ Clip", nil);
     
     NSNumberFormatter *nf = [NSNumberFormatter new];
     

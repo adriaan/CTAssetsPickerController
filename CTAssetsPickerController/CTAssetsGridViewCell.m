@@ -153,7 +153,7 @@
         
         [self.disabledImageView autoCenterInSuperview];
         
-        [self.checkmark autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
+        [self.checkmark autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:0];
         [self.checkmark autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:0];
         
         self.didSetupConstraints = YES;

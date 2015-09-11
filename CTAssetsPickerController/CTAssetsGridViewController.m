@@ -173,18 +173,23 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
 
 - (void)setupButtons
 {
+    UIImage *buttonImageNext = [[UIImage imageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.rightBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
-                                     style:UIBarButtonItemStyleDone
-                                    target:self.picker
-                                    action:@selector(finishPickingAssets:)];
+    //[[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
+//                                     style:UIBarButtonItemStyleDone
+//                                    target:self.picker
+//                                    action:@selector(finishPickingAssets:)];
+     [[UIBarButtonItem alloc] initWithImage:buttonImageNext style:UIBarButtonItemStylePlain target:self.picker action:@selector(finishPickingAssets:)];
     
     //NOTE: added the below to disable navigation back through the stack and have a cancel button instead.
     [self.navigationItem setHidesBackButton:YES animated:NO];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
-                                                                             style:UIBarButtonItemStyleDone
-                                                                            target:self.picker
-                                                                            action:@selector(dismiss:)];
+    
+    UIImage *buttonImageCancel = [[UIImage imageNamed:@"NavigationCancel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:buttonImageCancel style:UIBarButtonItemStylePlain target:self.picker action:@selector(dismiss:)];
+//    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
+//                                                                             style:UIBarButtonItemStyleDone
+//                                                                            target:self.picker
+//                                                                            action:@selector(dismiss:)];
 }
 
 - (void)setupAssets

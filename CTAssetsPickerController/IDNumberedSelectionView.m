@@ -24,9 +24,9 @@
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
         _label.textAlignment = NSTextAlignmentCenter;
         _label.backgroundColor = [UIColor clearColor];
-        _label.textColor = [UIColor whiteColor];
-        _label.font = [UIFont systemFontOfSize:10];
-        self.backgroundColor = [UIColor blueColor];
+        _label.textColor = [UIColor blackColor];
+        _label.font = [UIFont fontWithName:@"Swiss721BT-BoldCondensed" size:16.0f];
+        self.backgroundColor = [UIColor colorWithRed:250/255.0f green:236/255.0f blue:4/255.0f alpha:1.0f];
         
         [self addSubview:_label];
         
