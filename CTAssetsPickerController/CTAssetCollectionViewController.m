@@ -33,7 +33,7 @@
 #import "PHAssetCollection+CTAssetsPickerController.h"
 #import "PHAsset+CTAssetsPickerController.h"
 #import "NSBundle+CTAssetsPickerController.h"
-
+#import "UIImage+CTAssetsPickerController.h"
 
 
 
@@ -156,10 +156,10 @@
 //                                     style:UIBarButtonItemStylePlain
 //                                    target:self.picker
 //                                    action:@selector(dismiss:)];
-    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBarCancel"] style:UIBarButtonItemStylePlain target:self.picker action:@selector(dismiss:)];
+    [[UIBarButtonItem alloc] initWithImage:[UIImage ctassetsPickerImageNamed:@"NavigationBarCancel"] style:UIBarButtonItemStylePlain target:self.picker action:@selector(dismiss:)];
 
     
-    UIImage *buttonImage = [[UIImage imageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *buttonImage = [[UIImage ctassetsPickerImageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.doneButton =
 //    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
 //                                     style:UIBarButtonItemStyleDone

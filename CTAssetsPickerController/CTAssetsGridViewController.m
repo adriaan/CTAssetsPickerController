@@ -37,7 +37,7 @@
 #import "UICollectionView+CTAssetsPickerController.h"
 #import "NSIndexSet+CTAssetsPickerController.h"
 #import "NSBundle+CTAssetsPickerController.h"
-
+#import "UIImage+CTAssetsPickerController.h"
 
 
 
@@ -173,7 +173,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
 
 - (void)setupButtons
 {
-    UIImage *buttonImageNext = [[UIImage imageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *buttonImageNext = [[UIImage ctassetsPickerImageNamed:@"NavigationNext"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.rightBarButtonItem =
     //[[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
 //                                     style:UIBarButtonItemStyleDone
@@ -184,7 +184,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     //NOTE: added the below to disable navigation back through the stack and have a cancel button instead.
     [self.navigationItem setHidesBackButton:YES animated:NO];
     
-    UIImage *buttonImageCancel = [[UIImage imageNamed:@"NavigationCancel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *buttonImageCancel = [[UIImage ctassetsPickerImageNamed:@"NavigationCancel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:buttonImageCancel style:UIBarButtonItemStylePlain target:self.picker action:@selector(dismiss:)];
 //    [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Cancel", nil)
 //                                                                             style:UIBarButtonItemStyleDone
